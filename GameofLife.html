@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>The Game of Life!</title>
+        <style>
+            td.ruleOff {
+                border: 1px solid green;
+                background-color: whitesmoke;
+            }
+            td.ruleOn {
+                border: 1px solid green;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <div id="header" style="width: 100%; height: 10vh; background-color: whitesmoke;">
+            <label for="TileWidth">Tiles wide</label><input id="TileWidth" type="number" value="50" onclick="DrawBoard()"><br>
+            <label for="TileHeight">Tiles high</label><input id="TileHeight" type="number" value="50" onclick="DrawBoard()">
+            <button onclick="DrawBoard()">Clear</button>
+            <button onclick="DrawBoard(0.2)">Randomize Cells</button>
+            <button onclick="RandomizeRules()">Randomize Rules</button>
+            <button onclick="Step()">Step</button>
+            <!--button id="StartStop" onclick="StartStop()">Start</button-->
+            <table style="border: 2px solid green; width: 25vw;">
+                <tr>
+                    <td>ON</td>
+                    <td id="Rule10" class="ruleOff" onclick="Rule(10)">0</td>
+                    <td id="Rule11" class="ruleOff" onclick="Rule(11)">1</td>
+                    <td id="Rule12" class="ruleOn" onclick="Rule(12)">2</td>
+                    <td id="Rule13" class="ruleOn" onclick="Rule(13)">3</td>
+                    <td id="Rule14" class="ruleOff" onclick="Rule(14)">4</td>
+                    <td id="Rule15" class="ruleOff" onclick="Rule(15)">5</td>
+                    <td id="Rule16" class="ruleOff" onclick="Rule(16)">6</td>
+                    <td id="Rule17" class="ruleOff" onclick="Rule(17)">7</td>
+                    <td id="Rule18" class="ruleOff" onclick="Rule(18)">8</td>
+                </tr>
+                <tr>
+                    <td>OFF</td>
+                    <td id="Rule0" class="ruleOff" onclick="Rule(0)">0</td>
+                    <td id="Rule1" class="ruleOff" onclick="Rule(1)">1</td>
+                    <td id="Rule2" class="ruleOff" onclick="Rule(2)">2</td>
+                    <td id="Rule3" class="ruleOn" onclick="Rule(3)">3</td>
+                    <td id="Rule4" class="ruleOff" onclick="Rule(4)">4</td>
+                    <td id="Rule5" class="ruleOff" onclick="Rule(5)">5</td>
+                    <td id="Rule6" class="ruleOff" onclick="Rule(6)">6</td>
+                    <td id="Rule7" class="ruleOff" onclick="Rule(7)">7</td>
+                    <td id="Rule8" class="ruleOff" onclick="Rule(8)">8</td>
+                </tr>
+            </table>
+            <label>Steps Taken:</label><label id="steps">0</label>
+        </div>
+        <div id="board"></div>
+
+        <script src="GameofLife.js"></script>
+    </body>
+</html>
